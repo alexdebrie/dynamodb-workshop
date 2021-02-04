@@ -1,0 +1,98 @@
+[
+  {
+    "Username": {
+      "S": "alexdebrie"
+    },
+    "Name": {
+      "S": "Alex DeBrie"
+    },
+    "Interests": {
+      "L": [
+        {
+          "S": "AWS"
+        },
+        {
+          "S": "Basketball"
+        },
+        {
+          "S": "Board games"
+        }
+      ]
+    },
+    "Address": {
+      "M": {
+        "Street": {
+          "S": "1122 1st Avenue"
+        },
+        "City": {
+          "S": "Omaha"
+        },
+        "State": {
+          "S": "Nebraska"
+        }
+      }
+    }
+  },
+  {
+    "Username": {
+      "S": "bigtimebrad"
+    },
+    "Name": {
+      "S": "Brad Pitt"
+    },
+    "Interests": {
+      "L": [
+        {
+          "S": "Movies"
+        },
+        {
+          "S": "Kids"
+        }
+      ]
+    },
+    "Address": {
+      "M": {
+        "Street": {
+          "S": "555 Broadway"
+        },
+        "City": {
+          "S": "Beverly Hills"
+        },
+        "State": {
+          "S": "California"
+        }
+      }
+    }
+  },
+  {
+    "Username": {
+      "S": "the_serena"
+    },
+    "Name": {
+      "S": "Serena Williams"
+    },
+    "Interests": {
+      "L": [
+        {
+          "S": "Tennis"
+        },
+        {
+          "S": "French"
+        }
+      ]
+    },
+    "Address": {
+      "M": {
+        "Street": {
+          "S": "987 Avenue A"
+        },
+        "City": {
+          "S": "Palm Beach"
+        },
+        "State": {
+          "S": "Florida"
+        }
+      }
+    }
+  }
+]
