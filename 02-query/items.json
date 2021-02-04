@@ -1,0 +1,70 @@
+[
+  {
+    "Actor": {
+      "S": "Tom Hanks"
+    },
+    "Movie": {
+      "S": "Cast Away"
+    },
+    "Role": {
+      "S": "Chuck Noland"
+    },
+    "Year": {
+      "N": "2000"
+    },
+    "Genre": {
+      "S": "Drama"
+    }
+  },
+  {
+    "Actor": {
+      "S": "Tom Hanks"
+    },
+    "Movie": {
+      "S": "Toy Story"
+    },
+    "Role": {
+      "S": "Woody"
+    },
+    "Year": {
+      "N": "1995"
+    },
+    "Genre": {
+      "S": "Children's"
+    }
+  },
+  {
+    "Actor": {
+      "S": "Tim Allen"
+    },
+    "Movie": {
+      "S": "Toy Story"
+    },
+    "Role": {
+      "S": "Buzz Lightyear"
+    },
+    "Year": {
+      "N": "1995"
+    },
+    "Genre": {
+      "S": "Children's"
+    }
+  },
+  {
+    "Actor": {
+      "S": "Natalie Portman"
+    },
+    "Movie": {
+      "S": "Black Swan"
+    },
+    "Role": {
+      "S": "Nina Sayers"
+    },
+    "Year": {
+      "N": "2010"
+    },
+    "Genre": {
+      "S": "Drama"
+    }
+  }
+]

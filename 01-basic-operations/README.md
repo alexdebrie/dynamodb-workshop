@@ -1,6 +1,6 @@
 # DynamoDB -- Basic Operations
 
-In this first module, you will learn the basics of writing to and reading from DynamoDB. This module has four steps:
+In this first lesson, you will learn the basics of writing to and reading from DynamoDB. This lesson has five steps:
 
 - [Creating a DynamoDB table](#creating-a-dynamodb-table);
 - [Loading data using the PutItem operation](#loading-data-using-the-putitem-operation);
