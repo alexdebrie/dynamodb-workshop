@@ -2,13 +2,13 @@
 
 In the previous lesson, you learned the basics of DynamoDB, including terminology and the basic read and write operations.
 
-In this second lesson, we'll learn some more advanced access patterns. We'll see how to use a table with a composite primary key and the Query operation to retrieve multiple, related items in a single request.
+In this second lesson, we'll learn some more advanced access patterns. We'll see how to use a table with a composite primary key. Then, we'll see a few different ways to work with multiple items in a single request. In particular, we'll see the power of the Query operation, which is foundational for advanced DynamoDB work.
 
 This lesson has five steps:
 
 - [Creating a DynamoDB table with a composite primary key](#creating-a-dynamodb-table-with-a-composite-primary-key);
 - [Loading data into your table](#loading-data-into-your-table)
-- [Reading individual items using the GetItem operation](#reading-individual-items-using-the-getitem-operation);
+- [Reading multiple items using the BatchGetItem operation](#reading-multiple-items-using-the-batchgetitem-operation);
 - [Reading multiple items with the Query operation](#reading-multiple-items-with-the-query-operation);
 - [Deleting your DynamoDB table](#deleting-your-dynamodb-table);
 
@@ -46,13 +46,15 @@ There is a file named `items.json` that includes four MovieRole items in DynamoD
 
 If you get stuck, [look here](./src/insertItems.js) for an example.
 
-## Reading individual items using the GetItem operation
+## Reading multiple items using the BatchGetItem operation
 
 In the previous lesson, you read individual items from your table using the `GetItem` operation and including the `Username` attribute for the key. You can still use the `GetItem` operation on a table that has a composite primary key. However, you must provide _both_ elements of your primary key to read an individual item.
 
+Additionally, you may have situations where you want to retrieve multiple items at the same time. If you know the full primary key for each item you want to retrieve, you can use the `BatchGetItem` operation to retrieve multiple items in a single request. With the `BatchGetItem` operation, you can retrieve up to 100 items in a single request.
+
 ### Task
 
-Write a script that reads one of your items from your DynamoDB table. This is similar to the `GetItem` request you made in the last lesson, but it requires specifying both elements of the primary key.
+Write a script that uses `BatchGetItem` to read your items from your DynamoDB table. This is similar to the `GetItem` request you made in the last lesson, but it requires specifying both elements of the primary key for each item you want to retrieve.
 
 The four items in your table have the following primary key values:
 
@@ -61,11 +63,11 @@ The four items in your table have the following primary key values:
 3. Actor: Tim Allen; Movie: Toy Story
 4. Actor: Natalie Portman; Movie: Black Swan
 
-If you're having trouble, look at [this file](./src/getRole.js) for an example.
+If you're having trouble, look at [this file](./src/getRoles.js) for an example.
 
 ## Reading multiple items with the Query operation
 
-So far, we've read a single item from a table. But reading individual items is limiting in your application. Often, you'll want to read multiple, related items in a single request. For example, you might want to satisfy the following access patterns:
+So far, we've read specific, individual items from a table. But reading individual items is limiting in your application. Often, you'll want to read multiple, _related_ items in a single request. For example, you might want to satisfy the following access patterns:
 
 - _Give me all the Users that belong to Organization ABC_
 
@@ -130,6 +132,6 @@ Write a script to delete your `MovieRoles` table. See [here](./src/deleteTable.j
 
 ## Conclusion
 
-That completes this second lesson! You saw how to create a DynamoDB table with a composite primary key. You then quickly loaded data with the `BatchWriteItem` operation and read it back with the `GetItem` operation. Finally, you saw the power of a composite primary key when you used the `Query` operation to find multiple items with the same primary key.
+That completes this second lesson! You saw how to create a DynamoDB table with a composite primary key. You then quickly loaded data with the `BatchWriteItem` operation and read multiple items back with the `BatchGetItem` operation. Finally, you saw the power of a composite primary key when you used the `Query` operation to find multiple items with the same primary key.
 
 In the [next lesson](../03-secondary-indexes/README.md), you will learn how to enable multiple access patterns on the same item using secondary indexes.
