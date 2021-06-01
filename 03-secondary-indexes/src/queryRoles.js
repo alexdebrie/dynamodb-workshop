@@ -4,13 +4,13 @@ const DynamoDB = new AWS.DynamoDB({ region: "us-east-1" });
 DynamoDB.query(
   {
     TableName: "MovieRoles",
-    IndexName: "MovieActorIndex",
-    KeyConditionExpression: "#movie= :movie",
+    IndexName: "GenreYearIndex",
+    KeyConditionExpression: "#genre= :genre",
     ExpressionAttributeNames: {
-      "#movie": "Movie",
+      "#genre": "Genre",
     },
     ExpressionAttributeValues: {
-      ":movie": { S: "Toy Story" },
+      ":genre": { S: "Drama" },
     },
   },
   function (err, data) {

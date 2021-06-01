@@ -13,6 +13,14 @@ DynamoDB.createTable(
         AttributeName: "Movie",
         AttributeType: "S",
       },
+      {
+        AttributeName: "Genre",
+        AttributeType: "S",
+      },
+      {
+        AttributeName: "Year",
+        AttributeType: "N",
+      },
     ],
     KeySchema: [
       { AttributeName: "Actor", KeyType: "HASH" },
@@ -20,10 +28,10 @@ DynamoDB.createTable(
     ],
     GlobalSecondaryIndexes: [
       {
-        IndexName: "MovieActorIndex",
+        IndexName: "GenreYearIndex",
         KeySchema: [
-          { AttributeName: "Movie", KeyType: "HASH" },
-          { AttributeName: "Actor", KeyType: "RANGE" },
+          { AttributeName: "Genre", KeyType: "HASH" },
+          { AttributeName: "Year", KeyType: "RANGE" },
         ],
         ProvisionedThroughput: {
           ReadCapacityUnits: 5,

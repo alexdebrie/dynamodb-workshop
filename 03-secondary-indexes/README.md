@@ -42,6 +42,8 @@ To add a secondary index, you need to specify:
 - The provisioned throughput (if your table is not using on-demand billing);
 - The index projection (do you want the entire item copied over or a subset?)
 
+Additionally, if you use attributes in your secondary index that are not already used in the primary key or another secondary index, you will need to specify them in `AttributeDefinitions` when creating your table.
+
 For specifics on each of these properties, [check out the CreateTable docs](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_CreateTable.html#DDB-CreateTable-request-GlobalSecondaryIndexes).
 
 ### Task
@@ -50,9 +52,11 @@ In this lesson, we will continue with our movie roles example from the last less
 
 Recall that our primary key for the last lesson used a partition key of `Actor` and a sort key of `Movie`. This allowed us to fetch all movie roles for a particular Actor.
 
-But what if we want the opposite access pattern -- find all roles by the Movie name? We'll handle that here with a secondary index.
+But what if we have additional access patterns? For example, we may want to get all the movie roles for a particular genre, or even the movies for a genre for a specific year or range of years.
 
-Write and execute a script that will create a `MovieRoles` table. You can build on the script you wrote in the last lesson. This script should include a global secondary index called `MovieActorIndex` whose key schema uses `Movie` for the partition key and `Actor` for the sort key.
+We can handle these additional access patterns with a secondary index.
+
+Write and execute a script that will create a `MovieRoles` table. You can build on the script you wrote in the last lesson. This script should include a global secondary index called `GenreYearIndex` whose key schema uses `Genre` for the partition key and `Year` for the sort key.
 
 Try it on your own first, but if you want to see an example of this, look at [this file](./src/createTable.js).
 
@@ -68,13 +72,13 @@ If you get stuck, [look here](./src/insertItems.js) for an example.
 
 ## Using the Query operation on your secondary index
 
-Just like in the last lesson, we have an access pattern -- "Fetch all roles for a given movie" -- that is a "fetch many" access pattern. To handle this, we'll use the Query operation again. In this case, we'll be running the Query against our secondary index.
+Just like in the last lesson, we have an access pattern -- "Fetch all roles in a given genre" -- that is a "fetch many" access pattern. To handle this, we'll use the Query operation again. In this case, we'll be running the Query against our secondary index.
 
 ### Task
 
-Use the Query operation on your secondary index to query for all roles for a given movie. The structure around `KeyConditionExpression` should be similar to the last one. The biggest difference here is that you'll need to pass an `IndexName` property into the Query operation to indicate you want to use the secondary index.
+Use the Query operation on your secondary index to query for all roles for a given genre. The structure around `KeyConditionExpression` should be similar to the last one. The biggest difference here is that you'll need to pass an `IndexName` property into the Query operation to indicate you want to use the secondary index.
 
-Use the movie name `Toy Story` to execute your queries. It should return two roles -- Tom Hanks as Woody and Tim Allen as Buzz Lightyear.
+Use the genre of `Drama` to execute your queries. It should return two roles -- Tom Hanks in Cast Away and Natalie Portman in Black Swan.
 
 If you get stuck, check [here](./src/queryRoles.js) for an example of using Query.
 
