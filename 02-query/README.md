@@ -30,7 +30,10 @@ To begin, create a DynamoDB table with a composite primary key. Name your table 
 
 Like last time, choose to use provisioned throughput with `ReadCapacityUnits` and `WriteCapacityUnits` of `5`. This will fit within the AWS Free Tier and will be more than enough for this demo.
 
-Try it on your own first, but if you want to see an example of this, look at [this file](./src/createTable.js).
+Try it on your own first, but if you want to see an example of this, look at the following files:
+
+- [Node.js](./node/createTable.js).
+- [Python](./python/create_table.py).
 
 ## Loading data into your table
 
@@ -44,7 +47,10 @@ When using the `BatchWriteItem` operation, your writes can succeed and fail inde
 
 There is a file named `items.json` that includes four MovieRole items in DynamoDB's object format. Write a script that reads the items and inserts them into DynamoDB using the `BatchWriteItem` operation. Be sure to check for unprocessed items!
 
-If you get stuck, [look here](./src/insertItems.js) for an example.
+If you get stuck, look to the following files for an example:
+
+- [Node.js](./node/insertItems.js).
+- [Python](./python/insert_items.py).
 
 ## Reading multiple items using the BatchGetItem operation
 
@@ -63,7 +69,10 @@ The four items in your table have the following primary key values:
 3. Actor: Tim Allen; Movie: Toy Story
 4. Actor: Natalie Portman; Movie: Black Swan
 
-If you're having trouble, look at [this file](./src/getRoles.js) for an example.
+If you're having trouble, look at the following files for an example:
+
+- [Node.js](./node/getRoles.js).
+- [Python](./python/get_roles.py).
 
 ## Reading multiple items with the Query operation
 
@@ -120,7 +129,10 @@ Let's see a Query in action. There are two movies -- `Cast Away` and `Toy Story`
 
 Hint: you don't need to use a sort key condition here -- just the partition key match. If you want to get fancy, try adding a sort key condition to fetch all of Tom Hanks' movies whose titles are before `Forrest Gump` in the alphabet.
 
-If you get stuck, check [here](./src/queryRoles.js) for an example of using Query.
+If you get stuck, check below for examples of using the Query operation:
+
+- [Node.js](./node/queryRoles.js).
+- [Python](./python/query_roles.py).
 
 ## Deleting your DynamoDB Table
 
@@ -128,7 +140,10 @@ We've completed the main steps for this lesson, so let's remove your DynamoDB ta
 
 ### Task
 
-Write a script to delete your `MovieRoles` table. See [here](./src/deleteTable.js) for an example.
+Write a script to delete your `MovieRoles` table. See below for examples.
+
+- [Node.js](./node/deleteTable.js).
+- [Python](./python/delete_table.py).
 
 ## Conclusion
 

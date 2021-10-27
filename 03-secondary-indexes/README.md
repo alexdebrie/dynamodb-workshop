@@ -58,7 +58,10 @@ We can handle these additional access patterns with a secondary index.
 
 Write and execute a script that will create a `MovieRoles` table. You can build on the script you wrote in the last lesson. This script should include a global secondary index called `GenreYearIndex` whose key schema uses `Genre` for the partition key and `Year` for the sort key.
 
-Try it on your own first, but if you want to see an example of this, look at [this file](./src/createTable.js).
+Try it on your own first, but if you want to see an example of this, look at the following files:
+
+- [Node.js](./node/createTable.js).
+- [Python](./python/create_table.py).
 
 ## Loading data into your table
 
@@ -68,7 +71,10 @@ We're going to re-use the data from the last lesson, so use the same script to i
 
 There is a file named `items.json` that includes four MovieRole items in DynamoDB's object format. Write a script that reads the items and inserts them into DynamoDB using the `BatchWriteItem` operation. Be sure to check for unprocessed items!
 
-If you get stuck, [look here](./src/insertItems.js) for an example.
+If you get stuck, look to the following files for examples:
+
+- [Node.js](./node/insertItems.js).
+- [Python](./python/insert_items.py).
 
 ## Using the Query operation on your secondary index
 
@@ -80,7 +86,10 @@ Use the Query operation on your secondary index to query for all roles for a giv
 
 Use the genre of `Drama` to execute your queries. It should return two roles -- Tom Hanks in Cast Away and Natalie Portman in Black Swan.
 
-If you get stuck, check [here](./src/queryRoles.js) for an example of using Query.
+If you get stuck, check below for an example of using Query with a secondary index:
+
+- [Node.js](./node/queryRoles.js).
+- [Python](./python/query_roles.py).
 
 ## Deleting your DynamoDB Table
 
@@ -88,7 +97,10 @@ We've completed the main steps for this lesson, so let's remove your DynamoDB ta
 
 ### Task
 
-Write a script to delete your `MovieRoles` table. See [here](./src/deleteTable.js) for an example.
+Write a script to delete your `MovieRoles` table. See below for an example.
+
+- [Node.js](./node/deleteTable.js).
+- [Python](./python/delete_table.py).
 
 ## Conclusion
 

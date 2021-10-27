@@ -52,7 +52,10 @@ For this part of the workshop, you want to create a DynamoDB table with a simple
 
 For the throughput settings, choose to use provisioned throughput with `ReadCapacityUnits` and `WriteCapacityUnits` of `5`. This will fit within the AWS Free Tier and will be more than enough for this demo.
 
-Try it on your own first, but if you want to see an example of this, look at [this file](./src/createTable.js).
+Try it on your own first, but if you want to see an example of this, look at the following files:
+
+- [Node.js](./node/createTable.js).
+- [Python](./python/create_table.py).
 
 ## Loading data using the PutItem operation
 
@@ -86,7 +89,10 @@ As you insert items into DynamoDB, keep two things in mind:
 
 There is a file named `users.json` that includes three Users in DynamoDB's object format. Write a script that reads the three Users from the file and inserts them into the table using the `PutItem` operation. Because they are already in the DynamoDB object format, you don't need to add the attribute type information yourself.
 
-If you get stuck, [look here](./src/insertUsers.js) for an example.
+If you get stuck, look at the following files for examples:
+
+- [Node.js](./node/insertUsers.js).
+- [Python](./python/insert_users.py).
 
 ## Reading data using the GetItem operation
 
@@ -100,7 +106,10 @@ Write a script that reads one of your three items from your DynamoDB table. To d
 
 The usernames of the three items are `alexdebrie`, `the_serena`, and `bigtimebrad`.
 
-If you're having trouble, look at [this file](./src/getUser.js) for an example.
+If you're having trouble, look at the following files for an example:
+
+- [Node.js](./node/getUser.js).
+- [Python](./python/get_user.py).
 
 ## Preventing overwrites with Condition Expressions
 
@@ -120,7 +129,10 @@ Update your script from the Loading Data step to add a `ConditionExpression` on 
 
 Hint: you should use the [`attribute_not_exists()`](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.OperatorsAndFunctions.html#Expressions.OperatorsAndFunctions.Functions) function.
 
-Check [here](./src/insertUsersConditional.js) for an example of using the `ConditionExpression`.
+Check the following files for an example of using the `ConditionExpression`.
+
+- [Node.js](./node/insertUsersConditional.js).
+- [Python](./python/insert_users_conditional.py).
 
 ## Deleting your DynamoDB Table
 
@@ -128,7 +140,10 @@ We've completed the main steps for this lesson, so let's remove your DynamoDB ta
 
 ### Task
 
-Write a script to delete your `Users` table. See [here](./src/deleteTable.js) for an example.
+Write a script to delete your `Users` table. See the following files for an example:
+
+- [Node.js](./node/deleteTable.js).
+- [Python](./python/delete_table.py).
 
 ## Conclusion
 
